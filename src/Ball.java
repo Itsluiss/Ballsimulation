@@ -1,6 +1,6 @@
 import GLOOP.*;
 public class Ball{    
-    private GLKugel kugel;    
+    protected GLKugel kugel;
     private GLVektor bewegung;
     private double radius;
 

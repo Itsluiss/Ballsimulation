@@ -6,7 +6,7 @@ public class Ballsimulation{
     GLBoden boden;
     private GLTastatur tastatur;
 
-    private Ball ball;
+    protected Ball ball,ball2,ball3,ball4,ball5;
     private Hindernis[] hindernis;
 
     public Ballsimulation(){
@@ -21,19 +21,36 @@ public class Ballsimulation{
         hindernis[0] = new Hindernis(1000,200,0, 50,400,1300);
         hindernis[1] = new Hindernis(-1000,200,0, 50,400,1300);
 
-        ball = new Ball (0,200,0, 20);
+        ball = new Ball (0,200,-200, 20);
         ball.werfen(new GLVektor(1,0,0));
-
+        ball2 = new Ball (0,200,-100, 20);
+        ball2.werfen(new GLVektor(1,0,0));
+        ball3 = new Ball (0,200,0, 20);
+        ball3.werfen(new GLVektor(1,0,0));
+        ball4 = new Ball (0,200,100, 20);
+        ball4.werfen(new GLVektor(1,0,0));
+        ball5 = new Ball (0,200,200, 20);
+        ball5.werfen(new GLVektor(1,0,0));
         fuehreAus();
     }
 
     public void fuehreAus(){
-        while (!tastatur.esc()){
+        while (!tastatur.esc()) {
 
             ball.bewegeDich();
-            for (int j=0; j<2; j++)
-                ball.bearbeiteHindernis(hindernis[j]);
+            ball2.bewegeDich();
+            ball3.bewegeDich();
+            ball4.bewegeDich();
+            ball5.bewegeDich();
 
+            int j;
+            for (j = 0; j < 2; j++) {
+                ball.bearbeiteHindernis(hindernis[j]);
+            ball2.bearbeiteHindernis(hindernis[j]);
+            ball3.bearbeiteHindernis(hindernis[j]);
+            ball4.bearbeiteHindernis(hindernis[j]);
+            ball5.bearbeiteHindernis(hindernis[j]);
+        }
             Sys.warte();
         }
         Sys.beenden();
