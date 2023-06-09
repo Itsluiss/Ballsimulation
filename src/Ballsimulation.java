@@ -6,7 +6,11 @@ public class Ballsimulation{
     GLBoden boden;
     private GLTastatur tastatur;
 
-    protected Ball ball,ball2,ball3,ball4,ball5;
+    private Ball ball;
+    private Farbball ball2;
+    private GravBall ball3;
+    private Pulsball ball4;
+    private Reibball ball5;
     private Hindernis[] hindernis;
 
     public Ballsimulation(){
@@ -23,13 +27,13 @@ public class Ballsimulation{
 
         ball = new Ball (0,200,-200, 20);
         ball.werfen(new GLVektor(1,0,0));
-        ball2 = new Ball (0,200,-100, 20);
+        ball2 = new Farbball (0,200,-100, 20);
         ball2.werfen(new GLVektor(1,0,0));
-        ball3 = new Ball (0,200,0, 20);
+        ball3 = new GravBall (0,200,0, 20);
         ball3.werfen(new GLVektor(1,0,0));
-        ball4 = new Ball (0,200,100, 20);
+        ball4 = new Pulsball (0,200,100, 20);
         ball4.werfen(new GLVektor(1,0,0));
-        ball5 = new Ball (0,200,200, 20);
+        ball5 = new Reibball (0,200,200, 20);
         ball5.werfen(new GLVektor(1,0,0));
         fuehreAus();
     }
