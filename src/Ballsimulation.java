@@ -9,8 +9,8 @@ public class Ballsimulation{
     private Ball ball;
     private Farbball ball2;
     private GravBall ball3;
-    private Pulsball ball4;
-    private Reibball ball5;
+    private Speedball ball4;
+    private Riesen ball5;
     private Hindernis[] hindernis;
 
     public Ballsimulation(){
@@ -22,18 +22,19 @@ public class Ballsimulation{
         tastatur = new GLTastatur();
 
         hindernis = new Hindernis[2];
-        hindernis[0] = new Hindernis(1000,200,0, 50,400,1300);
-        hindernis[1] = new Hindernis(-1000,200,0, 50,400,1300);
+        hindernis[0] = new Hindernis(1000,200,0, 50,5000,1300);
+        hindernis[1] = new Hindernis(-1000,200,0, 50,5000,1300);
+
 
         ball = new Ball (0,200,-200, 20);
         ball.werfen(new GLVektor(1,0,0));
         ball2 = new Farbball (0,200,-100, 20);
         ball2.werfen(new GLVektor(1,0,0));
-        ball3 = new GravBall (0,200,0, 20);
-        ball3.werfen(new GLVektor(1,0,0));
-        ball4 = new Pulsball (0,200,100, 20);
-        ball4.werfen(new GLVektor(1,0,0));
-        ball5 = new Reibball (0,200,200, 20);
+        ball3 = new GravBall (0,2000,0, 20);
+        ball3.werfen(new GLVektor(1,-0.1,0));
+        ball4 = new Speedball (0,200,100, 20);
+        ball4.werfen(new GLVektor(2,0,0));
+        ball5 = new Riesen(0,200,200, 20);
         ball5.werfen(new GLVektor(1,0,0));
         fuehreAus();
     }
